@@ -1,0 +1,568 @@
+.mini-title,
+.eyebrow {
+  margin: 0;
+  color: var(--muted-2);
+  font-size: 14px;
+}
+
+.article-visual h3 {
+  max-width: 430px;
+  margin: 0;
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.article-visual p {
+  max-width: 480px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.stack-tabs,
+.tool-cloud,
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.stack-tabs span,
+.tool-cloud span,
+.tool-list span,
+.badges span {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+}
+
+/* 主布局 */
+.about-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 72px;
+}
+
+/* 个人卡片样式 */
+.profile-card {
+  position: absolute;
+  top: 24px;
+  transform: translateX(-50%);
+  width: 480px;
+  height: 323px;
+  overflow: visible;
+  transform-origin: 50% -91px;
+  animation: profileCardSwing 1000ms linear 120ms both;
+  will-change: transform;
+}
+
+.profile-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 210px;
+  padding: 40px;
+  border-radius: 12px;
+  background: rgb(242, 242, 242);
+  box-shadow: rgba(255, 255, 255, 0.5) 4px 4px 8px 0px inset, rgba(0, 0, 0, 0.05) -4px -4px 4px -2px inset, rgba(0, 0, 0, 0.4) 0px 4px 16px -16px;
+  overflow: hidden;
+}
+
+@keyframes profileCardSwing {
+  0% {
+    opacity: 1;
+    transform: rotate(34deg);
+  }
+
+  6% {
+    opacity: 1;
+    transform: rotate(31deg);
+  }
+
+  12% {
+    opacity: 1;
+    transform: rotate(22deg);
+  }
+
+  18% {
+    opacity: 1;
+    transform: rotate(9deg);
+  }
+
+  24% {
+    opacity: 1;
+    transform: rotate(-6deg);
+  }
+
+  30% {
+    opacity: 1;
+    transform: rotate(-18deg);
+  }
+
+  36% {
+    opacity: 1;
+    transform: rotate(-24deg);
+  }
+
+  42% {
+    opacity: 1;
+    transform: rotate(-22deg);
+  }
+
+  48% {
+    opacity: 1;
+    transform: rotate(-14deg);
+  }
+
+  54% {
+    opacity: 1;
+    transform: rotate(-4deg);
+  }
+
+  60% {
+    opacity: 1;
+    transform: rotate(6deg);
+  }
+
+  66% {
+    opacity: 1;
+    transform: rotate(12deg);
+  }
+
+  72% {
+    opacity: 1;
+    transform: rotate(11deg);
+  }
+
+  78% {
+    opacity: 1;
+    transform: rotate(7deg);
+  }
+
+  84% {
+    opacity: 1;
+    transform: rotate(2deg);
+  }
+
+  90% {
+    opacity: 1;
+    transform: rotate(-2deg);
+  }
+
+  96% {
+    opacity: 1;
+    transform: rotate(-1deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+/* 伪元素边框 */
+.profile-card-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  border: 1px solid rgba(232, 232, 232, 0.75);
+  pointer-events: none;
+}
+
+/* 挂绳样式 */
+.profile-card-line {
+  position: absolute;
+  bottom: 182px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 232px;
+  z-index: 1;
+}
+
+.profile-card-line img {
+  display: block;
+  size: 40px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 挂绳孔样式 */
+.profile-card-hole {  
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 12px;
+  left: 50%;/* 注释：居中对齐 */
+  transform: translateX(-50%);/* 注释：居中对齐 */
+  aspect-ratio: 1;
+  width: 20px;
+  overflow: visible;
+} 
+
+.profile-card-hole .card-hole {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 19px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: rgb(250, 250, 250);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px -1px 0px 1px inset;
+}
+
+/*左侧标签样式*/
+.profile-card-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 32px;
+  background-color: rgba(0, 0, 0, 0.07);
+  transform: none; /* 注释：不应用变换 */
+  overflow: visible;
+}
+
+.profile-card-label .label-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%) rotate(-90deg);
+ }
+
+.profile-card-label .label-text p {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 0.16);
+}
+
+/* 个人卡片左侧样式 */
+.profile-card-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: min-content;/* 注释：自适应高度 */
+  gap: 12px;
+}
+
+/* 个人卡片左侧头像样式 */
+.profile-card-left .profile-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+}
+
+.profile-card-left .profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-card-left .profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+.profile-info .profile-name {
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.profile-info .profile-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--muted);
+;
+}
+
+/* 个人卡片右侧样式 */
+.profile-card-right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+}
+
+.profile-card-right .right-item {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+}
+
+.profile-card-right .right-item .right-item-icon {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+}
+.profile-card-right .right-item .right-item-text {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--muted);
+}
+
+.profile-card-right .right-item-line {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(20, 20, 20, 0.08);
+}
+
+.profile-person {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  justify-items: center;
+  align-items: center;
+}
+
+.profile-person > div {
+  width: 160px;
+}
+
+.profile-card h1 {
+  margin: 0 0 5px;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.profile-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* about 内容样式 */
+.about-content { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  width: 100%;
+  padding: 395px 0 160px;
+}
+
+.about-me {
+  display: flex;
+  flex-direction: column;
+  width: 480px;
+  gap: 40px;
+}
+/* 自我介绍 */
+.introduction {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.introduction-content p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--muted);
+}
+
+.copy-block {
+  display: grid;
+  gap: 18px;
+  max-width: 720px;
+}
+
+.copy-block p {
+  margin: 0;
+  font-size: clamp(24px, 3.2vw, 44px);
+  letter-spacing: -0.05em;
+  line-height: 1.04;
+}
+
+/* 工具列表 */
+.info-tool {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-tool h5 {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.tool-list {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding: 4px 8px;
+  background-color: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  border-radius: 16px;
+}
+
+.tool-list .container {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.tool-list .tool-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.tool-list .framer,
+.tool-list .codex,
+.tool-list .gemini,
+.tool-list .notion {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #e8e8e8;
+  background: linear-gradient(134deg,#ffffff 0%,#fafafa 100%);
+  box-shadow: inset -2px -2px 4px #00000014;
+}
+
+.tool-list .figma img {
+  width: 42px;
+  height: 42px;
+}
+
+.tool-list .cursor img {
+  width: 36px;
+  height: 36px;
+}
+
+.tool-list .framer img {
+  width: 22px;
+  height: 22px;
+}
+
+.tool-list .codex img {
+  width: 100%;
+  height: 100%;
+}
+
+.tool-list .gemini img,
+.tool-list .notion img {
+  width: 24px;
+  height: 24px;
+}
+
+/* 教育工作经历 */
+.info-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.info-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-item-content-title {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 500;
+}
+
+.info-item-content-desc {
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--muted);
+}
+
+.info-line {
+  height: 1px;
+  width: 100%;
+  background-color: #e8e8e8;
+}
+
+/* 教育工作经历 */
+.info-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 480px;
+  gap: 16px;
+}
+
+/* 教育工作经历内容 */
+.info-section {
+  display: flex;
+  flex-direction: column;
+  width: 480px;
+  gap: 24px;
+}
+
+/* 标题样式 */
+.info-section h2 { 
+  margin: 0 0 6px;
+  color: var(--text);
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+/* 联系方式列表 */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-list a {
+  width: fit-content;
+  color: var(--blue);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-card {
+    animation: none;
+    transform: none;
+  }
+}

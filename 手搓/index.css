@@ -1,0 +1,199 @@
+@font-face {
+  font-family: "MiSans";
+  src: url("./font/MiSans-Thin.woff2") format("woff2");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "MiSans";
+  src: url("./font/MiSans-Normal.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "MiSans";
+  src: url("./font/MiSans-Medium.woff2") format("woff2");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "MiSans";
+  src: url("./font/MiSans-Bold.woff2") format("woff2");
+  font-weight: 900;
+}
+
+:root {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --soft: #f2f2f2;
+  --line: rgba(20, 20, 20, 0.08);
+  --text: #141414;
+  --muted: #5c5c5c;
+  --muted-2: #8e8e8e;
+  --blue: #006ad4;
+  --yellow: #ffdc00;
+  --radius: 20px;
+  --shadow: 0 24px 70px rgba(20, 20, 20, 0.08);
+  --content-max: 960px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background-color: var(--bg);
+  font-family: "MiSans", Arial, sans-serif;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.header {
+  position: fixed;
+  inset: 0 0 auto;/* 注释：固定在顶部 */
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  padding: 12px 24px;
+  pointer-events: none;
+}
+
+.nav-list {
+  width: min-content;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 16px;
+  background-color: rgba(242, 242, 242, 0.8);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: var(--radius);
+  gap: 12px;
+}
+
+.nav-list a {
+  line-height: 26px;
+  color: var(--muted);
+}
+
+.nav-list a:hover {
+  color: var(--text);
+}
+
+.contact {
+  position: absolute;
+  top: -178px;
+  right: -110px;
+  transform: rotate(-9deg);
+  width: min-content;
+  height: min-content;
+  padding: 24px 24px 0 0;
+  transition: transform 0.2s ease-in-out;
+  will-change: transform;
+}
+
+.contact-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: var(--yellow);
+  box-shadow: var(--shadow);
+  border-radius: 12px;
+  box-shadow: 0 0 20px -12px rgba(0, 0, 0, 0.4);
+}
+
+.nav-list,
+.contact {
+  pointer-events: auto;
+}
+
+.contact:hover {
+  transform: translateX(-110px) translateY(178px) rotate(0deg);
+  will-change: transform;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-info-item a{
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 26px;
+  color: var(--blue);
+}
+
+.work {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.work-left,
+.work-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.work-item {
+  position: relative;
+  width: 444px;
+  height: 444px;
+}
+
+.work-item-content {
+  width: 444px;
+  height: 444px;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+}
+
+.work-item-link {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+.work-item-link  a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 18px;
+  background-color: rgb(250, 250, 250);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 0px 0px 1px, rgba(0, 0, 0, 0) 0 4px 6px -2px;
+}
+
+.work-item-info {
+  position: absolute;
+  bottom: -56px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: visible;
+  z-index: 10;
+}
+
+.work-item-info .work-item-title {
+  font: 500 13px/20px "MiSans", Arial, sans-serif;
+  color: var(--text);
+}
+.work-item-info .work-item-desc {
+  font: 13px/20px "MiSans", Arial, sans-serif;
+  color: var(--muted);
+  opacity: 0.65;
+}

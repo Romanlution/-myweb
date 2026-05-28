@@ -1,0 +1,342 @@
+.frame {
+  --frame-scale: 0.8;
+  width: 1200px;
+  height: 675px;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  overflow: hidden;
+  transform: scale(var(--frame-scale));
+  transform-origin: top center;
+  will-change: transform;
+}
+
+.frame-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame-image-prompt {
+  position: absolute;
+  top: 64px;
+  left: 24px;
+  transform: rotate(-8deg);
+  width: 320px;
+  height: auto;
+  object-fit: cover;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+.frame-image-edit {
+  position: absolute;
+  top: -2px;
+  right: -24px;
+  transform: rotate(-8deg);
+  width: 400px;
+  height: auto;
+  object-fit: cover;
+  padding: 8px;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+.frame-image-set {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  transform: rotate(8deg);
+  width: 280px;
+  height: auto;
+  object-fit: cover;
+  padding: 4px;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+.frame-image-model {
+  position: absolute;
+  left: 80px;
+  top: 440px;
+  transform: rotate(6deg);
+  width: 320px;
+  height: auto;
+  object-fit: cover;
+  padding: 4px;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+.frame-image-knowledge {
+  position: absolute;
+  right: 500px;
+  top: 440px;
+  transform: rotate(8deg);
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  padding: 8px;
+  background-color: #fff;
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.frame-image-plugin {
+  position: absolute;
+  right: 48px;
+  top: 360px;
+  transform: rotate(-6deg);
+  width: 400px;
+  height: auto;
+  object-fit: cover;
+  padding: 8px;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+.frame-image-plugin-json {
+  position: absolute;
+  right: 13px;
+  bottom: 14px;
+  width: 67%;
+  height: 89%;
+  pointer-events: none;
+}
+
+.frame-image-detail {
+  position: absolute;
+  left: 280px;
+  top: 64px;
+  transform: rotate(8deg);
+  width: 240px;
+  height: auto;
+  object-fit: cover;
+  padding: 4px;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+.plugin-code-window {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: #0f172a;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.28);
+  color: #dbeafe;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+.plugin-code-topbar {
+  display: flex;
+  height: 28px;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(15, 23, 42, 0.92);
+}
+
+.plugin-code-topbar span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.plugin-code-topbar span:nth-child(1) {
+  background: #ff5f57;
+}
+
+.plugin-code-topbar span:nth-child(2) {
+  background: #ffbd2e;
+}
+
+.plugin-code-topbar span:nth-child(3) {
+  background: #28c840;
+}
+
+.plugin-code-topbar strong {
+  margin-left: 6px;
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.plugin-code-window pre {
+  flex: 1;
+  margin: 0;
+  padding: 10px 0 12px;
+  overflow: hidden;
+  font-size: 8.5px;
+  line-height: 1.7;
+  tab-size: 2;
+}
+
+.plugin-code-window code {
+  display: block;
+  padding-left: 18px;
+  white-space: normal;
+}
+
+.plugin-code-window .code-line {
+  display: block;
+  white-space: pre;
+}
+
+.plugin-code-window .indent {
+  padding-left: 12px;
+}
+
+.plugin-code-window .indent-2 {
+  padding-left: 24px;
+}
+
+.plugin-code-window .line {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  min-height: 14px;
+  padding: 0 12px 0 0;
+  white-space: pre;
+}
+
+.plugin-code-window .num {
+  color: #475569;
+  text-align: right;
+  user-select: none;
+}
+
+.plugin-code-window .key {
+  color: #7dd3fc;
+}
+
+.plugin-code-window .string {
+  color: #86efac;
+}
+
+.plugin-code-window .bool {
+  color: #fbbf24;
+}
+
+.plugin-code-window .brace {
+  color: #e2e8f0;
+}
+
+.frame-image-prompt img,
+.frame-image-edit img,
+.frame-image-set img,
+.frame-image-model img,
+.frame-image-prompt img,
+.frame-image-edit img,
+.frame-image-knowledge img,
+.frame-image-plugin img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.soft-image {
+  width: 720px;
+  height: min-content;
+  overflow: hidden;
+  border-radius: 12px;
+  padding: 56px 36px 0;
+  background-color: #f0f0f0;
+  border: 1px solid rgb(232, 232, 232);
+  box-shadow:rgba(0, 0, 0, 0.3) 0px 0px 16px -8px;
+  }
+
+.soft-image img {
+  width: 100%;
+  object-fit: cover;
+  height: auto;
+  border: none;
+}
+
+.case-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 40px 0 0;
+}
+
+.case-section h2 {
+    font-weight: 600;
+    line-height: 1.5;
+    color: #141414;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.audit-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  border: 1px solid #f2f2f2;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px -10px;
+  overflow: hidden;
+  width: 100%;
+  padding: 24px;
+}
+
+.audit-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-design {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.product-design-container {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    width: 100%;
+}
+
+.product-design-item {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.product-design h3 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #141414;
+}
+
+.case-page {
+    padding: 160px 0 120px;
+}
+
+.product-prograss {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #f2f2f2;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px -10px;
+}
