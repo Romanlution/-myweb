@@ -1,15 +1,12 @@
 {
-  "version": 2,
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
   "cleanUrls": false,
   "trailingSlash": false,
-  "routes": [
+  "rewrites": [
     {
-      "src": "/",
-      "dest": "/html/index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
+      "source": "/",
+      "destination": "/html/index.html"
     }
   ]
 }
