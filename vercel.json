@@ -1,11 +1,15 @@
 {
+  "version": 2,
   "cleanUrls": false,
   "trailingSlash": false,
-  "redirects": [
+  "routes": [
     {
-      "source": "/",
-      "destination": "/html/index.html",
-      "permanent": false
+      "src": "/",
+      "dest": "/html/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
     }
   ]
 }
